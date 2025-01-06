@@ -1,5 +1,5 @@
 # React + Vite
 
-This is a basic shopping cart
+- This is a basic shopping cart
 
 
