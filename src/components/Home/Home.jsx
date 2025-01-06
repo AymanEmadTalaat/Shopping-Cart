@@ -19,7 +19,7 @@ function Home() {
   function handleSearch(e) {
     const { value } = e.target;
 
-    setSearch(value);
+    setSearch(value.toLowerCase());
   }
 
   const filteredProducts =
