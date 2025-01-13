@@ -10,6 +10,23 @@ function Layout() {
   const [open, setOpen] = useState(false);
   const [cart, setCart] = useState([]);
 
+  const [form, setForm] = useState({
+    email: "John@gmail.com",
+    username: "johnd",
+    password: "m38rmF$",
+    firstname: "John",
+    lastname: "Doe",
+  });
+
+  function handleForm(e) {
+    const { name, value } = e.currentTarget;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  }
+
   function addToCart(product) {
     const alreadyCourses = cart.find((item) => item.id === product.id);
 
@@ -32,7 +49,16 @@ function Layout() {
 
   return (
     <OpenContext.Provider
-      value={{ open, handleOpen, cart, addToCart, setCart, removeFromCart }}
+      value={{
+        open,
+        handleOpen,
+        cart,
+        addToCart,
+        setCart,
+        removeFromCart,
+        form,
+        handleForm,
+      }}
     >
       <Header />
       <Cart />

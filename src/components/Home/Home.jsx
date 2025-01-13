@@ -19,7 +19,7 @@ function Home() {
   function handleSearch(e) {
     const { value } = e.target;
 
-    setSearch(value.toLowerCase());
+    setSearch(value);
   }
 
   const filteredProducts =
@@ -31,7 +31,7 @@ function Home() {
 
   const products = filteredProducts.map((product) => {
     return (
-      <div key={product.id}>
+      <div className="product-container" key={product.id}>
         <img width="300px" height="150px" src={product.img} alt="" />
 
         <ul>
