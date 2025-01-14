@@ -515,3 +515,9 @@ form a {
   background-color: #000;
   color: whitesmoke;
 }
+
+@media screen and (max-width: 680px) {
+  .order-summary {
+    top: -50rem;
+  }
+}
