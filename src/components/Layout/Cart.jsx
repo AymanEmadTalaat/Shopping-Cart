@@ -1,15 +1,22 @@
 import "../../App.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Drawer from "@mui/joy/Drawer";
 import { Close } from "@mui/icons-material";
 import { Add } from "@mui/icons-material";
 import { Remove } from "@mui/icons-material";
 import { OpenContext } from "./Layout";
+import { NavLink } from "react-router";
 
 function Cart() {
-  const { open, handleOpen, cart, setCart, removeFromCart } =
-    useContext(OpenContext);
-  const [productsTotal, setProductsTotal] = useState(0);
+  const {
+    open,
+    handleOpen,
+    cart,
+    setCart,
+    removeFromCart,
+    productsTotal,
+    setProductsTotal,
+  } = useContext(OpenContext);
 
   useEffect(() => {
     function handleProductsTotal() {
@@ -21,7 +28,7 @@ function Cart() {
     }
 
     handleProductsTotal();
-  }, [cart]);
+  }, [cart, setProductsTotal]);
 
   const products = cart.map((product, index) => {
     return (
@@ -98,6 +105,8 @@ function Cart() {
         <button onClick={() => setCart([])} className="empty-cart-btn">
           Empty your basket
         </button>
+
+        <NavLink to="/checkout">Checkout</NavLink>
       </Drawer>
     </>
   );

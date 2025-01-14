@@ -110,12 +110,16 @@ main input {
 
 .product-container {
   max-width: 430px;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.product-container,
+.product {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
   margin-inline: auto;
-  padding: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
@@ -124,24 +128,35 @@ main input {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-main > div > img {
+.product-container a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-container img {
   max-width: 100%;
   height: 150px;
 }
 
-main ul {
-  align-self: flex-start;
+.product-container ul,
+.product ul {
   margin-top: auto;
   padding: 0.5rem;
 }
 
-main li {
+.product-container li,
+.product li {
   padding-block: 0.5rem;
   list-style-type: none;
 }
 
-main button {
+.product-container button,
+.product-container ul {
   align-self: start;
+}
+
+.product-container button,
+.product button {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.2);
   outline: none;
@@ -150,16 +165,52 @@ main button {
   cursor: pointer;
 }
 
-main button:active,
-main button:focus,
-main input:focus,
-main input:active {
+.product-container button:active,
+.product-container button:focus,
+.product-container input:focus,
+.product-container input:active,
+.product button:active,
+.product button:focus,
+.product input:focus,
+.product input:active {
   outline: 1px solid skyblue;
 }
 
-main button:hover {
+.product-container button:hover,
+.product button:hover {
   background-color: #000;
   color: whitesmoke;
+}
+
+/*Product*/
+.product {
+  max-width: 500px;
+  width: 100%;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.product button {
+  width: 70%;
+}
+
+.product img {
+  max-width: 100%;
+  height: 200px;
+}
+
+.product-link {
+  color: inherit;
+  text-decoration: none;
+  position: absolute;
+  top: -3rem;
+  left: 0;
+}
+
+.product-link:hover {
+  text-decoration: underline;
 }
 
 /*Cart*/
@@ -178,6 +229,14 @@ main button:hover {
   font-size: 1.1rem;
   font-weight: 500;
   text-align: center;
+}
+
+.carts-container a {
+  color: inherit;
+  margin-top: 3rem;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .cart-container {
@@ -278,6 +337,16 @@ form > button {
   padding: 15px 20px;
 }
 
+form > button:active,
+form > button:focus {
+  outline: 1px solid skyblue;
+}
+
+form > button:hover {
+  background-color: #000;
+  color: whitesmoke;
+}
+
 form label,
 form > button {
   cursor: pointer;
@@ -329,4 +398,120 @@ form a {
 .profile-container > button {
   width: 65%;
   margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.profile-container > button:active,
+.profile-container > button:focus {
+  outline: 1px solid skyblue;
+}
+
+.profile-container > button:hover {
+  background-color: #000;
+  color: whitesmoke;
+}
+
+/*Checkout*/
+.checkout-container a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.checkout-container a:hover {
+  text-decoration: underline;
+}
+
+.product-checkout,
+.checkout-section,
+.submit-order {
+  display: flex;
+  align-items: center;
+}
+
+.product-checkout {
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 3rem;
+}
+
+.product-checkout:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.product-checkout {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.product-checkout img {
+  width: 15%;
+  height: auto;
+}
+
+.product-checkout ul {
+  list-style-type: none;
+}
+
+.checkout-section {
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  gap: 3rem;
+  position: relative;
+}
+
+.order-summary {
+  width: 30%;
+  min-width: 400px;
+  height: 87.7vh;
+  background-color: whitesmoke;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  position: absolute;
+  top: -54px;
+  right: -2rem;
+}
+
+.checkout-section > div h1 {
+  margin: 0 0 2rem;
+  font-size: 1.2rem;
+}
+
+.checkout-section > div h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.submit-order {
+  flex-direction: column;
+  width: 50%;
+  margin-inline-end: auto;
+  padding: 3rem;
+}
+
+.submit-order > * {
+  margin-inline-end: auto;
+}
+
+.submit-order > button {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.submit-order > button:active,
+.submit-order > button:focus {
+  outline: 1px solid skyblue;
+}
+
+.submit-order > button:hover {
+  background-color: #000;
+  color: whitesmoke;
 }

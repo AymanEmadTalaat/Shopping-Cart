@@ -9,6 +9,7 @@ const OpenContext = createContext();
 function Layout() {
   const [open, setOpen] = useState(false);
   const [cart, setCart] = useState([]);
+  const [productsTotal, setProductsTotal] = useState(0);
 
   const [form, setForm] = useState({
     email: "John@gmail.com",
@@ -58,6 +59,8 @@ function Layout() {
         removeFromCart,
         form,
         handleForm,
+        productsTotal,
+        setProductsTotal,
       }}
     >
       <Header />

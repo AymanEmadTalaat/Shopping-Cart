@@ -1,12 +1,8 @@
 import "../../App.css";
 import { useContext, useState } from "react";
-import { useSearchParams, useLoaderData } from "react-router";
+import { useSearchParams, NavLink } from "react-router";
 import data from "../../components/data.js";
 import { OpenContext } from "../Layout/Layout.jsx";
-
-export function Loader() {
-  return data;
-}
 
 function Home() {
   const { addToCart, cart } = useContext(OpenContext);
@@ -14,7 +10,7 @@ function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const typeFilter = searchParams.get("title");
-  const productsData = useLoaderData();
+  const productsData = data;
 
   function handleSearch(e) {
     const { value } = e.target;
@@ -32,12 +28,14 @@ function Home() {
   const products = filteredProducts.map((product) => {
     return (
       <div className="product-container" key={product.id}>
-        <img width="300px" height="150px" src={product.img} alt="" />
+        <NavLink to={`${product.id}`}>
+          <img width="300px" height="150px" src={product.img} alt="" />
 
-        <ul>
-          <li>{product.title}</li>
-          <li>Price: ${product.newPrice}</li>
-        </ul>
+          <ul>
+            <li>{product.title}</li>
+            <li>Price: ${product.newPrice}</li>
+          </ul>
+        </NavLink>
 
         <button
           disabled={cart.find((item) => item.id === product.id)}
