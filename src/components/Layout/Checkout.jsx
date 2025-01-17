@@ -28,16 +28,14 @@ function Checkout() {
         <div className="checkout-section">
           <div className="order-summary">
             <h1>Order summary</h1>
-            <h2>Total: ${productsTotal}</h2>
 
-            {products}
+            <div>{products}</div>
 
+            <h3>Total: ${productsTotal}</h3>
             <h3>Shipping: Free</h3>
           </div>
 
-          <div className="submit-order">
-            <button>Continue to payment</button>
-          </div>
+          <button>Continue to payment</button>
         </div>
       ) : (
         <h1 style={{ textAlign: "center" }}>Your cart is empty</h1>

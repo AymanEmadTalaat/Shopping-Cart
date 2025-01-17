@@ -10,12 +10,12 @@ import { NavLink } from "react-router";
 function Cart() {
   const {
     open,
-    handleOpen,
     cart,
     setCart,
     removeFromCart,
     productsTotal,
     setProductsTotal,
+    handleClose,
   } = useContext(OpenContext);
 
   useEffect(() => {
@@ -92,7 +92,7 @@ function Cart() {
       <Drawer open={open} anchor="right" className="carts-container">
         <button
           className="closeCart-btn"
-          onClick={handleOpen}
+          onClick={handleClose}
           aria-label="Close cart button"
         >
           <Close />

@@ -45,7 +45,11 @@ function Layout() {
   }
 
   function handleOpen() {
-    setOpen(!open);
+    setOpen(true);
+  }
+
+  function handleClose() {
+    setOpen(false);
   }
 
   return (
@@ -61,14 +65,13 @@ function Layout() {
         handleForm,
         productsTotal,
         setProductsTotal,
+        handleClose,
       }}
     >
       <Header />
       <Cart />
 
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </OpenContext.Provider>
   );
 }

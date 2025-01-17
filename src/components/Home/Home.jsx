@@ -27,7 +27,7 @@ function Home() {
 
   const products = filteredProducts.map((product) => {
     return (
-      <div className="product-container" key={product.id}>
+      <div className="products-container" key={product.id}>
         <NavLink to={`${product.id}`}>
           <img width="300px" height="150px" src={product.img} alt="" />
 
@@ -52,7 +52,7 @@ function Home() {
   });
 
   return (
-    <>
+    <div className="home-container">
       <h1>Listed Products</h1>
       <label>
         <input
@@ -64,7 +64,7 @@ function Home() {
         />
       </label>
       {products}
-    </>
+    </div>
   );
 }
 
