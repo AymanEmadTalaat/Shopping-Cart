@@ -1,6 +1,7 @@
 import "../../App.css";
 import { useContext, useEffect } from "react";
 import Drawer from "@mui/joy/Drawer";
+import Box from "@mui/material/Box";
 import { Close } from "@mui/icons-material";
 import { Add } from "@mui/icons-material";
 import { Remove } from "@mui/icons-material";
@@ -89,7 +90,12 @@ function Cart() {
 
   return (
     <>
-      <Drawer open={open} anchor="right" className="carts-container">
+      <Drawer
+        open={open}
+        onClose={handleClose}
+        anchor="right"
+        className="carts-container"
+      >
         <button
           className="closeCart-btn"
           onClick={handleClose}
@@ -106,7 +112,9 @@ function Cart() {
           Empty your basket
         </button>
 
-        <NavLink to="/checkout">Checkout</NavLink>
+        <Box className="checkout-btn" onClick={handleClose}>
+          <NavLink to="/checkout">Checkout</NavLink>
+        </Box>
       </Drawer>
     </>
   );
